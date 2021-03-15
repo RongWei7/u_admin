@@ -39,7 +39,7 @@ let getters = {
 let actions = {
     reqlist(context, bool) {
         let params = bool ? {} : { page: context.state.page, size: context.state.size }
-        specslist(params).then(res => {
+        specslist(params).then(res =>  {
             if (res.data.code == 200) {
                 //删除最后一页最后一个
                 if (res.data.list.length == 0 && context.state.page > 1) {
